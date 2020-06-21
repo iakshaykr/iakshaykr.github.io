@@ -711,8 +711,8 @@ transition: all 0.5s ease-in-out;
 		background-size:54px 54px;
 	}
 	.box_contact span.linkedin{
-		background-image: url(../images/icon_linkedin@x2.png);
-		background-size:54px 54px;
+		background-image: url(../images/icon_linkedin.png);
+		background-size:54px 41px;
 	}
 /* begin add	 */
 	.fancybox-close {
