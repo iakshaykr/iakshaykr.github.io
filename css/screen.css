@@ -20,7 +20,7 @@
 	.box_contact span{font-size: 25px;}
 }
 @media only screen and (max-width : 1100px) {
-	.plagin_list li{ }
+	.plaginlist li{ }
 }
 @media only screen and (max-width : 1050px) {
 	.box_timeline_holder{padding: 0 0 0 20px;}
@@ -198,8 +198,9 @@
 	}
 	.box_contact {
 		margin: 40px auto 0;
-		width: 380px;
+		width: 280px;
 	}
 	.box_contact span.email{font-size: 12px;}
+	.box_contact span.linkedin{font-size: 12px;}
 	.images_holder{width: 280px;margin: 0 auto 20px;}
 }
