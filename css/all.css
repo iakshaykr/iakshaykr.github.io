@@ -522,7 +522,7 @@ transition: all 0.5s ease-in-out;
 	padding: 5px 0 18px 80px;
 }
 .box_contact span.email{background: url(../images/icon_email2.png) no-repeat;}
-.box_contact span.phone{background: url(../images/icon_linkedin.png) no-repeat;}
+.box_contact span.phone{background: url(../images/icon_phone.png) no-repeat;}
 .box_contact span.linkedin{background: url(../images/icon_phone@x2.png) no-repeat;}
 /*footer
  */
@@ -707,7 +707,7 @@ transition: all 0.5s ease-in-out;
 		background-size:54px 41px;
 	}
 	.box_contact span.phone{
-		background-image: url(../images/icon_phone@x2.png);
+		background-image: url(../images/icon_linkedin.png);
 		background-size:54px 54px;
 	}
 	.box_contact span.linkedin{
