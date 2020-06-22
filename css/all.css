@@ -528,7 +528,7 @@ transition: all 0.5s ease-in-out;
 	padding: 5px 0 18px 80px;
     text-transform: none;
 }
-.box_contact span.emails{background: url(../images/icon_mail.small.png) no-repeat;}
+.box_contact span.email{background: url(../images/icon_mail.small.png) no-repeat;}
 .box_contact span.phone{background: url(../images/icon_phone_small.png) no-repeat;}
 .box_contact span.linkedin{background: url(../images/icon_linkedin_small.png) no-repeat;}
 .box_contact span.github{background: url(../images/icon_github_small.png) no-repeat;}
