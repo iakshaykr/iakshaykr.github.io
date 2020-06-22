@@ -712,18 +712,20 @@ transition: all 0.5s ease-in-out;
 		background-image: url(../images/icon_seo@x2.png);
 		background-size:60px 24px;
 	}
-	.box_contact span.email{
+	/*
+    .box_contact span.email{
 		background-image: url(../images/icon_email2@x2.png);
 		background-size:54px 41px;
 	}
 	.box_contact span.phone{
-		background-image: url(../images/icon_linkedin.png);
+		background-image: url(../images/icon_linkedin_small.png);
 		background-size:54px 54px;
 	}
 	.box_contact span.linkedin{
 		background-image: url(../images/icon_phone@x2.png);
 		background-size:54px 41px;
-	}
+    
+	}    */
 /* begin add	 */
 	.fancybox-close {
 		background-image: url(../images/ico_btn-close@x2.png);
