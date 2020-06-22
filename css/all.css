@@ -707,7 +707,7 @@ transition: all 0.5s ease-in-out;
 		background-size:54px 41px;
 	}
 	.box_contact span.phone{
-		background-image: url(../images/icon_.png);
+		background-image: url(../images/icon_phone@x2.png);
 		background-size:54px 54px;
 	}
 	.box_contact span.linkedin{
