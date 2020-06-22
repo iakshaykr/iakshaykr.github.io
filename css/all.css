@@ -523,7 +523,7 @@ transition: all 0.5s ease-in-out;
 }
 .box_contact span.email{background: url(../images/icon_email2.png) no-repeat;}
 .box_contact span.phone{background: url(../images/icon_phone.png) no-repeat;}
-.box_contact span.linkedin{background: url(../images/icon_phone.png) no-repeat;}
+.box_contact span.linkedin{background: url(../images/icon_phone@x2.png) no-repeat;}
 /*footer
  */
 #footer {
