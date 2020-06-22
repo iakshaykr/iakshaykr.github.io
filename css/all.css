@@ -143,6 +143,7 @@ a:hover{text-decoration:underline;}
 	margin: 0 auto;
 	padding: 69px 0 50px;
 	position:relative;
+    color: black;
 }
 .menu_trigger{
 	width: 31px;
