@@ -188,6 +188,64 @@
 			letter-spacing: 0.02em;
 		}
 
+		.career-graph {
+			max-width: 980px;
+			margin: 0 auto 24px;
+			padding: 14px;
+			border-radius: 16px;
+			border: 1px solid rgba(127, 201, 255, 0.24);
+			background: linear-gradient(145deg, rgba(10, 20, 48, 0.72), rgba(8, 16, 36, 0.58));
+			box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+		}
+
+		.career-graph svg {
+			display: block;
+			width: 100%;
+			height: auto;
+		}
+
+		.graph-grid line {
+			stroke: rgba(127, 201, 255, 0.2);
+			stroke-width: 1;
+		}
+
+		.graph-trend {
+			fill: none;
+			stroke: #63d2ff;
+			stroke-width: 3;
+			stroke-linecap: round;
+			stroke-linejoin: round;
+			filter: drop-shadow(0 0 8px rgba(99, 210, 255, 0.35));
+			stroke-dasharray: 700;
+			stroke-dashoffset: 700;
+			animation: drawLine 1.9s ease forwards;
+		}
+
+		.graph-point {
+			fill: #9fffe2;
+			stroke: #0d1b3d;
+			stroke-width: 2;
+		}
+
+		.graph-label {
+			fill: #dce9ff;
+			font-size: 12px;
+			font-family: "Space Grotesk", sans-serif;
+		}
+
+		.graph-title {
+			fill: #a9bfdc;
+			font-size: 11px;
+			letter-spacing: 0.04em;
+			text-transform: uppercase;
+		}
+
+		@keyframes drawLine {
+			to {
+				stroke-dashoffset: 0;
+			}
+		}
+
 		#main {
 			background: none !important;
 			padding-top: 44px !important;
@@ -289,6 +347,10 @@
 				width: 100%;
 				text-align: center;
 			}
+
+			.graph-label {
+				font-size: 10px;
+			}
 		}
 	</style>
 </head>
@@ -334,6 +396,36 @@
 				<div class="section-intro">
 					<h2>Career Experience</h2>
 					<p>A timeline of roles, growth, and impact across cloud and data engineering.</p>
+				</div>
+				<div class="career-graph">
+					<svg viewBox="0 0 920 260" role="img" aria-label="Career growth graph from system admin to senior manager in data engineering">
+						<g class="graph-grid">
+							<line x1="60" y1="40" x2="890" y2="40"></line>
+							<line x1="60" y1="95" x2="890" y2="95"></line>
+							<line x1="60" y1="150" x2="890" y2="150"></line>
+							<line x1="60" y1="205" x2="890" y2="205"></line>
+						</g>
+						<polyline class="graph-trend" points="70,210 190,190 310,165 430,145 550,125 670,100 790,75"></polyline>
+						<circle class="graph-point" cx="70" cy="210" r="6"></circle>
+						<circle class="graph-point" cx="190" cy="190" r="6"></circle>
+						<circle class="graph-point" cx="310" cy="165" r="6"></circle>
+						<circle class="graph-point" cx="430" cy="145" r="6"></circle>
+						<circle class="graph-point" cx="550" cy="125" r="6"></circle>
+						<circle class="graph-point" cx="670" cy="100" r="6"></circle>
+						<circle class="graph-point" cx="790" cy="75" r="6"></circle>
+						<text class="graph-title" x="66" y="24">Career Growth Graph</text>
+						<text class="graph-label" x="38" y="212">L1</text>
+						<text class="graph-label" x="38" y="152">L2</text>
+						<text class="graph-label" x="38" y="97">L3</text>
+						<text class="graph-label" x="38" y="42">L4</text>
+						<text class="graph-label" x="50" y="236">IBM</text>
+						<text class="graph-label" x="156" y="236">Citrix</text>
+						<text class="graph-label" x="274" y="236">KPMG 1</text>
+						<text class="graph-label" x="394" y="236">KPMG 2</text>
+						<text class="graph-label" x="514" y="236">KPMG 3</text>
+						<text class="graph-label" x="624" y="236">MS Mgr</text>
+						<text class="graph-label" x="744" y="236">MS Sr Mgr</text>
+					</svg>
 				</div>
 				<div class="box_timeline_holder">
 					<div class="box_timeline">
