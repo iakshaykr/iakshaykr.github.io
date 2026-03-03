@@ -40,6 +40,10 @@ body {
   z-index: 2;
 }
 
+#main {
+  background: none !important;
+}
+
 #header {
   margin-top: 22px;
   padding: 26px 28px !important;
