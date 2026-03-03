@@ -14,12 +14,162 @@
 	<link rel="stylesheet" href="js/fancybox/jquery.fancybox.css" type="text/css" media="screen" />
 	<link rel="stylesheet" href="css/all.css" />
 	<link rel="stylesheet" href="css/screen.css" />
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
 	<!--[if lt IE 9]>
 		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
+	<style>
+		:root {
+			--bg-1: #040816;
+			--bg-2: #0b1534;
+			--panel: rgba(10, 16, 38, 0.62);
+			--line: rgba(127, 201, 255, 0.22);
+			--text: #dce8ff;
+			--muted: #9db3d3;
+			--accent: #4dd2ff;
+			--accent-2: #7fffd4;
+		}
+
+		html,
+		body {
+			min-height: 100%;
+			background: radial-gradient(1200px 700px at 10% 0%, #102252 0%, var(--bg-1) 55%, #02040c 100%) !important;
+			color: var(--text) !important;
+			font-family: "Space Grotesk", sans-serif !important;
+		}
+
+		#neural-bg {
+			position: fixed;
+			inset: 0;
+			z-index: 0;
+		}
+
+		.aura {
+			position: fixed;
+			inset: 0;
+			z-index: 1;
+			pointer-events: none;
+			background:
+				radial-gradient(circle at 18% 12%, rgba(77, 210, 255, 0.18), transparent 35%),
+				radial-gradient(circle at 88% 82%, rgba(127, 255, 212, 0.12), transparent 30%);
+		}
+
+		#wrapper,
+		.wrapper-holder,
+		.wrapper-holder.grey {
+			background: transparent !important;
+			position: relative;
+			z-index: 2;
+		}
+
+		#header {
+			margin-top: 22px;
+			padding: 26px 28px !important;
+			border-radius: 18px;
+			background: var(--panel);
+			border: 1px solid var(--line);
+			backdrop-filter: blur(8px);
+			box-shadow: 0 16px 40px rgba(0, 0, 0, 0.28);
+		}
+
+		#nav ul li a {
+			color: var(--muted) !important;
+			font-weight: 500 !important;
+			letter-spacing: 0.03em;
+			transition: color 0.2s ease, text-shadow 0.2s ease;
+		}
+
+		#nav ul li a:hover,
+		#nav ul li a.active {
+			color: var(--accent) !important;
+			text-shadow: 0 0 12px rgba(77, 210, 255, 0.55);
+		}
+
+		h1.logo {
+			font-family: "Orbitron", sans-serif !important;
+			color: #eef5ff !important;
+			letter-spacing: 0.08em !important;
+			text-transform: uppercase;
+			text-shadow: 0 0 24px rgba(77, 210, 255, 0.35);
+		}
+
+		.slogan {
+			color: var(--accent-2) !important;
+			letter-spacing: 0.04em !important;
+			font-weight: 500 !important;
+		}
+
+		#main h2 {
+			color: #eaf2ff !important;
+			font-family: "Orbitron", sans-serif;
+			letter-spacing: 0.04em;
+		}
+
+		.box_timeline {
+			background: var(--panel);
+			border: 1px solid var(--line);
+			border-radius: 18px;
+			padding: 18px 10px !important;
+			backdrop-filter: blur(8px);
+			box-shadow: 0 24px 44px rgba(0, 0, 0, 0.25);
+		}
+
+		.box_timeline ul li {
+			background: rgba(13, 20, 46, 0.74);
+			border: 1px solid rgba(90, 175, 255, 0.2);
+			border-radius: 14px;
+			padding: 14px 18px !important;
+			margin-bottom: 12px !important;
+			transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+		}
+
+		.box_timeline ul li:hover {
+			transform: translateY(-2px);
+			border-color: rgba(127, 255, 212, 0.5);
+			box-shadow: 0 10px 26px rgba(41, 160, 255, 0.16);
+		}
+
+		.box_timeline .date span {
+			background: linear-gradient(90deg, rgba(77, 210, 255, 0.2), rgba(127, 255, 212, 0.2));
+			border: 1px solid rgba(127, 201, 255, 0.4);
+			color: #d9f9ff !important;
+			border-radius: 999px;
+			padding: 5px 12px !important;
+			font-weight: 700;
+			display: inline-block;
+		}
+
+		.box_timeline h3 {
+			color: #f4f9ff !important;
+			font-weight: 700 !important;
+		}
+
+		.box_timeline p,
+		#header p {
+			color: var(--muted) !important;
+		}
+
+		@media (max-width: 768px) {
+			#header {
+				padding: 18px 14px !important;
+			}
+
+			h1.logo {
+				font-size: 24px !important;
+			}
+
+			.box_timeline ul li {
+				padding: 12px !important;
+			}
+		}
+	</style>
 </head>
 
 <body>
+	<canvas id="neural-bg" aria-hidden="true"></canvas>
+	<div class="aura" aria-hidden="true"></div>
 	<div id="wrapper">
 		<div class="wrapper-holder">
 			<header id="header">
@@ -109,6 +259,101 @@
 	<script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
 	<script type="text/javascript" src="js/fancybox/jquery.fancybox.pack.js"></script>
 	<script type="text/javascript" src="js/main.js"></script>
+	<script>
+		(function () {
+			var canvas = document.getElementById("neural-bg");
+			if (!canvas) return;
+			var ctx = canvas.getContext("2d");
+			var dpr = window.devicePixelRatio || 1;
+			var nodes = [];
+			var mouse = { x: -9999, y: -9999, active: false };
+			var count = 70;
+			var radius = 130;
+
+			function size() {
+				canvas.width = Math.floor(window.innerWidth * dpr);
+				canvas.height = Math.floor(window.innerHeight * dpr);
+				canvas.style.width = window.innerWidth + "px";
+				canvas.style.height = window.innerHeight + "px";
+				ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+			}
+
+			function seed() {
+				nodes = [];
+				for (var i = 0; i < count; i++) {
+					nodes.push({
+						x: Math.random() * window.innerWidth,
+						y: Math.random() * window.innerHeight,
+						vx: (Math.random() - 0.5) * 0.45,
+						vy: (Math.random() - 0.5) * 0.45,
+						r: Math.random() * 1.6 + 1.1
+					});
+				}
+			}
+
+			function step() {
+				ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
+
+				for (var i = 0; i < nodes.length; i++) {
+					var a = nodes[i];
+					a.x += a.vx;
+					a.y += a.vy;
+					if (a.x <= 0 || a.x >= window.innerWidth) a.vx *= -1;
+					if (a.y <= 0 || a.y >= window.innerHeight) a.vy *= -1;
+
+					ctx.beginPath();
+					ctx.fillStyle = "rgba(140, 220, 255, 0.9)";
+					ctx.arc(a.x, a.y, a.r, 0, Math.PI * 2);
+					ctx.fill();
+
+					for (var j = i + 1; j < nodes.length; j++) {
+						var b = nodes[j];
+						var dx = a.x - b.x;
+						var dy = a.y - b.y;
+						var dist = Math.sqrt(dx * dx + dy * dy);
+						if (dist < radius) {
+							var alpha = (1 - dist / radius) * 0.4;
+							ctx.beginPath();
+							ctx.strokeStyle = "rgba(98, 185, 255," + alpha.toFixed(3) + ")";
+							ctx.lineWidth = 1;
+							ctx.moveTo(a.x, a.y);
+							ctx.lineTo(b.x, b.y);
+							ctx.stroke();
+						}
+					}
+
+					if (mouse.active) {
+						var mx = a.x - mouse.x;
+						var my = a.y - mouse.y;
+						var md = Math.sqrt(mx * mx + my * my);
+						if (md < 170) {
+							var ma = (1 - md / 170) * 0.58;
+							ctx.beginPath();
+							ctx.strokeStyle = "rgba(127,255,212," + ma.toFixed(3) + ")";
+							ctx.lineWidth = 1.2;
+							ctx.moveTo(a.x, a.y);
+							ctx.lineTo(mouse.x, mouse.y);
+							ctx.stroke();
+						}
+					}
+				}
+
+				requestAnimationFrame(step);
+			}
+
+			window.addEventListener("mousemove", function (e) {
+				mouse.x = e.clientX;
+				mouse.y = e.clientY;
+				mouse.active = true;
+			});
+			window.addEventListener("mouseleave", function () { mouse.active = false; });
+			window.addEventListener("resize", function () { size(); seed(); });
+
+			size();
+			seed();
+			step();
+		})();
+	</script>
 </body>
 
 </html>
