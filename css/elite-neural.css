@@ -1,0 +1,205 @@
+:root {
+  --bg-1: #040816;
+  --bg-2: #0b1534;
+  --panel: rgba(10, 16, 38, 0.62);
+  --line: rgba(127, 201, 255, 0.22);
+  --text: #dce8ff;
+  --muted: #9db3d3;
+  --accent: #4dd2ff;
+  --accent-2: #7fffd4;
+}
+
+html,
+body {
+  min-height: 100%;
+  background: radial-gradient(1200px 700px at 10% 0%, #102252 0%, var(--bg-1) 55%, #02040c 100%) !important;
+  color: var(--text) !important;
+  font-family: "Space Grotesk", sans-serif !important;
+}
+
+#neural-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+}
+
+.aura {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: radial-gradient(circle at 18% 12%, rgba(77, 210, 255, 0.18), transparent 35%), radial-gradient(circle at 88% 82%, rgba(127, 255, 212, 0.12), transparent 30%);
+}
+
+#wrapper,
+.wrapper-holder,
+.wrapper-holder.grey,
+#wrapper .wrapper-holder.grey {
+  background: transparent !important;
+  position: relative;
+  z-index: 2;
+}
+
+#header {
+  margin-top: 22px;
+  padding: 26px 28px !important;
+  border-radius: 18px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.28);
+}
+
+#nav ul li a {
+  color: var(--muted) !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.03em;
+  transition: color 0.2s ease, text-shadow 0.2s ease;
+}
+
+#nav ul li a:hover,
+#nav ul li a.active {
+  color: var(--accent) !important;
+  text-shadow: 0 0 12px rgba(77, 210, 255, 0.55);
+}
+
+h1.logo,
+#main h2 {
+  font-family: "Orbitron", sans-serif !important;
+  color: #eaf2ff !important;
+  letter-spacing: 0.04em;
+}
+
+h1.logo {
+  text-transform: uppercase;
+  text-shadow: 0 0 24px rgba(77, 210, 255, 0.35);
+}
+
+.slogan {
+  color: var(--accent-2) !important;
+  letter-spacing: 0.04em !important;
+  font-weight: 500 !important;
+}
+
+#header p,
+#main p,
+.box_timeline p,
+.project_content,
+.box_contact span,
+.skills_holder li span {
+  color: var(--muted) !important;
+}
+
+.box_timeline,
+.skills_holder,
+.box_contact,
+.project_items,
+.card {
+  background: var(--panel) !important;
+  border: 1px solid var(--line) !important;
+  border-radius: 18px !important;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 24px 44px rgba(0, 0, 0, 0.25);
+}
+
+.box_timeline {
+  padding: 18px 10px !important;
+}
+
+.box_timeline ul li,
+.progress li,
+.project_items {
+  background: rgba(13, 20, 46, 0.74) !important;
+  border: 1px solid rgba(90, 175, 255, 0.2) !important;
+  border-radius: 14px !important;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.box_timeline ul li:hover,
+.progress li:hover,
+.project_items:hover,
+.card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(127, 255, 212, 0.5) !important;
+  box-shadow: 0 10px 26px rgba(41, 160, 255, 0.16);
+}
+
+.box_timeline .date span,
+.project_items .btn {
+  background: linear-gradient(90deg, rgba(77, 210, 255, 0.2), rgba(127, 255, 212, 0.2));
+  border: 1px solid rgba(127, 201, 255, 0.4);
+  color: #d9f9ff !important;
+}
+
+.box_timeline .date span {
+  border-radius: 999px;
+  padding: 5px 12px !important;
+  font-weight: 700;
+  display: inline-block;
+}
+
+.project_items {
+  width: 100% !important;
+  padding: 14px !important;
+  margin-bottom: 16px !important;
+  color: var(--text) !important;
+  height: auto !important;
+}
+
+.project_title,
+.box_timeline h3,
+.card-title,
+.box_contact a,
+.skills_holder h2,
+.project_items a {
+  color: #f4f9ff !important;
+}
+
+.project_items a {
+  text-decoration: none !important;
+}
+
+.project_items .btn {
+  border-radius: 999px;
+  padding: 8px 14px;
+}
+
+.skills_holder .column,
+.box_contact {
+  background: transparent !important;
+}
+
+.progress li span {
+  border: 1px solid rgba(127, 201, 255, 0.25);
+  border-radius: 10px;
+  background: rgba(15, 30, 64, 0.7);
+  padding: 8px 12px;
+}
+
+.images_holder img {
+  border-radius: 16px;
+  border: 1px solid rgba(127, 201, 255, 0.3);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.35);
+}
+
+.image-grid-container img,
+.project_items img {
+  border-radius: 12px;
+  border: 1px solid rgba(127, 201, 255, 0.25);
+}
+
+@media (max-width: 768px) {
+  #header {
+    padding: 18px 14px !important;
+  }
+
+  h1.logo {
+    font-size: 24px !important;
+  }
+
+  .project_items img {
+    width: 100% !important;
+    float: none !important;
+    margin: 0 0 12px !important;
+  }
+}
