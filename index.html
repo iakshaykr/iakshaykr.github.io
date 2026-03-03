@@ -240,6 +240,121 @@
 			text-transform: uppercase;
 		}
 
+		.career-roadmap {
+			position: relative;
+			padding: 22px 10px 14px;
+		}
+
+		.road-line {
+			position: absolute;
+			left: 24px;
+			right: 24px;
+			top: 50%;
+			height: 4px;
+			margin-top: -2px;
+			border-radius: 999px;
+			background: linear-gradient(90deg, rgba(110, 189, 255, 0.45), rgba(127, 255, 212, 0.48));
+		}
+
+		.road-grid {
+			display: grid;
+			grid-template-columns: repeat(7, minmax(155px, 1fr));
+			gap: 12px;
+			align-items: stretch;
+			position: relative;
+			z-index: 1;
+		}
+
+		.milestone {
+			position: relative;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+		}
+
+		.milestone .year-chip {
+			display: inline-block;
+			padding: 6px 10px;
+			border-radius: 999px;
+			border: 1px solid rgba(125, 204, 255, 0.55);
+			background: linear-gradient(90deg, rgba(56, 127, 184, 0.55), rgba(56, 156, 170, 0.5));
+			color: #e9f7ff;
+			font-size: 0.86rem;
+			font-weight: 700;
+			letter-spacing: 0.03em;
+		}
+
+		.milestone .node {
+			width: 14px;
+			height: 14px;
+			border-radius: 50%;
+			background: #9efee1;
+			border: 2px solid #0e234f;
+			box-shadow: 0 0 0 6px rgba(158, 254, 225, 0.2);
+			margin: 8px 0;
+		}
+
+		.milestone .connector {
+			width: 2px;
+			height: 34px;
+			background: linear-gradient(180deg, rgba(130, 211, 255, 0.6), rgba(130, 211, 255, 0.1));
+			margin: 2px 0;
+		}
+
+		.m-card {
+			width: 100%;
+			min-height: 128px;
+			border: 1px solid rgba(105, 181, 255, 0.3);
+			border-radius: 14px;
+			padding: 10px 10px 12px;
+			background: linear-gradient(155deg, rgba(9, 20, 50, 0.94), rgba(7, 16, 42, 0.9));
+			text-align: center;
+			box-shadow: inset 0 0 0 1px rgba(130, 220, 255, 0.08);
+		}
+
+		.m-card strong {
+			display: block;
+			color: #eef7ff;
+			font-size: 0.95rem;
+			margin-bottom: 6px;
+		}
+
+		.m-card span {
+			display: block;
+			color: #a9bfdc;
+			font-size: 0.84rem;
+			line-height: 1.25;
+		}
+
+		.milestone.top {
+			padding-bottom: 160px;
+		}
+
+		.milestone.bottom {
+			padding-top: 160px;
+		}
+
+		.milestone.top .year-chip,
+		.milestone.top .node,
+		.milestone.top .connector {
+			order: 2;
+		}
+
+		.milestone.top .m-card {
+			order: 1;
+		}
+
+		.milestone.bottom .year-chip,
+		.milestone.bottom .node,
+		.milestone.bottom .connector {
+			order: 1;
+		}
+
+		.milestone.bottom .m-card {
+			order: 2;
+		}
+
 		.graph-note {
 			fill: rgba(8, 20, 46, 0.88);
 			stroke: rgba(126, 201, 255, 0.45);
@@ -370,6 +485,28 @@
 				font-size: 10px;
 			}
 
+			.road-line {
+				display: none;
+			}
+
+			.road-grid {
+				grid-template-columns: 1fr;
+				gap: 12px;
+			}
+
+			.milestone.top,
+			.milestone.bottom {
+				padding: 0;
+			}
+
+			.milestone .connector {
+				display: none;
+			}
+
+			.milestone .node {
+				margin: 6px 0 8px;
+			}
+
 		}
 	</style>
 </head>
@@ -417,78 +554,53 @@
 					<p>A timeline of roles, growth, and impact across cloud and data engineering.</p>
 				</div>
 				<div class="career-graph">
-					<svg viewBox="0 0 1220 620" role="img" aria-label="Career experience scatter plot with roles and tenure details">
-						<g class="graph-grid">
-							<line x1="40" y1="80" x2="1180" y2="80"></line>
-							<line x1="40" y1="170" x2="1180" y2="170"></line>
-							<line x1="40" y1="260" x2="1180" y2="260"></line>
-							<line x1="40" y1="350" x2="1180" y2="350"></line>
-							<line x1="40" y1="440" x2="1180" y2="440"></line>
-						</g>
-						<text class="graph-title" x="46" y="40">Career Experience Scatter Plot</text>
-
-						<polyline class="graph-trend" points="120,330 280,305 440,275 600,245 760,220 920,195 1080,165"></polyline>
-
-						<circle cx="120" cy="330" r="14" fill="rgba(77,210,255,0.75)" stroke="rgba(200,245,255,0.95)" stroke-width="2"></circle>
-						<circle cx="280" cy="305" r="16" fill="rgba(77,210,255,0.78)" stroke="rgba(200,245,255,0.95)" stroke-width="2"></circle>
-						<circle cx="440" cy="275" r="18" fill="rgba(77,210,255,0.8)" stroke="rgba(200,245,255,0.95)" stroke-width="2"></circle>
-						<circle cx="600" cy="245" r="20" fill="rgba(77,210,255,0.82)" stroke="rgba(200,245,255,0.95)" stroke-width="2"></circle>
-						<circle cx="760" cy="220" r="22" fill="rgba(77,210,255,0.84)" stroke="rgba(200,245,255,0.95)" stroke-width="2"></circle>
-						<circle cx="920" cy="195" r="24" fill="rgba(77,210,255,0.88)" stroke="rgba(200,245,255,0.95)" stroke-width="2"></circle>
-						<circle cx="1080" cy="165" r="26" fill="rgba(127,255,212,0.88)" stroke="rgba(220,255,245,0.98)" stroke-width="2"></circle>
-
-						<g transform="translate(45,356)">
-							<rect class="graph-note" width="150" height="70" rx="8"></rect>
-							<text class="graph-note-title" x="75" y="17" text-anchor="middle">07/17-06/18 • IBM</text>
-							<text class="graph-note-sub" x="75" y="37" text-anchor="middle">IT System</text>
-							<text class="graph-note-sub" x="75" y="50" text-anchor="middle">Administraor</text>
-						</g>
-
-						<g transform="translate(205,332)">
-							<rect class="graph-note" width="150" height="70" rx="8"></rect>
-							<text class="graph-note-title" x="75" y="17" text-anchor="middle">6/18-3/20 • CITRIX R&amp;D</text>
-							<text class="graph-note-sub" x="75" y="37" text-anchor="middle">L3 System</text>
-							<text class="graph-note-sub" x="75" y="50" text-anchor="middle">Administraor</text>
-						</g>
-
-						<g transform="translate(365,302)">
-							<rect class="graph-note" width="150" height="82" rx="8"></rect>
-							<text class="graph-note-title" x="75" y="17" text-anchor="middle">04/20-8/20 • KPMG</text>
-							<text class="graph-note-sub" x="75" y="37" text-anchor="middle">Azure CloudOps Consultant</text>
-							<text class="graph-note-sub" x="75" y="50" text-anchor="middle">Advisory Tech-Cloud</text>
-							<text class="graph-note-sub" x="75" y="63" text-anchor="middle">Analytics</text>
-						</g>
-
-						<g transform="translate(525,272)">
-							<rect class="graph-note" width="150" height="82" rx="8"></rect>
-							<text class="graph-note-title" x="75" y="17" text-anchor="middle">08/20-08/21 • KPMG</text>
-							<text class="graph-note-sub" x="75" y="37" text-anchor="middle">Azure CloudOps Consultant</text>
-							<text class="graph-note-sub" x="75" y="50" text-anchor="middle">Architecture &amp; Platfrom</text>
-							<text class="graph-note-sub" x="75" y="63" text-anchor="middle">Engineering</text>
-						</g>
-
-						<g transform="translate(685,247)">
-							<rect class="graph-note" width="150" height="82" rx="8"></rect>
-							<text class="graph-note-title" x="75" y="17" text-anchor="middle">08/21-08/22 • KPMG</text>
-							<text class="graph-note-sub" x="75" y="37" text-anchor="middle">Senior CloudOps Consultant</text>
-							<text class="graph-note-sub" x="75" y="50" text-anchor="middle">Architecture &amp; Platfrom</text>
-							<text class="graph-note-sub" x="75" y="63" text-anchor="middle">Engineering</text>
-						</g>
-
-						<g transform="translate(850,222)">
-							<rect class="graph-note" width="150" height="70" rx="8"></rect>
-							<text class="graph-note-title" x="75" y="17" text-anchor="middle">08/22-08/24 • Morgan Stanley</text>
-							<text class="graph-note-sub" x="75" y="37" text-anchor="middle">Manager Data</text>
-							<text class="graph-note-sub" x="75" y="50" text-anchor="middle">Engineering</text>
-						</g>
-
-						<g transform="translate(1030,192)">
-							<rect class="graph-note" width="175" height="70" rx="8"></rect>
-							<text class="graph-note-title" x="87" y="17" text-anchor="middle">01/24-Present • Morgan Stanley</text>
-							<text class="graph-note-sub" x="87" y="37" text-anchor="middle">Senior Manager Data</text>
-							<text class="graph-note-sub" x="87" y="50" text-anchor="middle">Engineering</text>
-						</g>
-					</svg>
+					<div class="career-roadmap">
+						<div class="road-line"></div>
+						<div class="road-grid">
+							<article class="milestone top">
+								<div class="m-card"><strong>IBM</strong><span>IT System Administraor</span></div>
+								<div class="connector"></div>
+								<div class="node"></div>
+								<span class="year-chip">07/17-06/18</span>
+							</article>
+							<article class="milestone bottom">
+								<span class="year-chip">6/18-3/20</span>
+								<div class="node"></div>
+								<div class="connector"></div>
+								<div class="m-card"><strong>CITRIX R&amp;D</strong><span>L3 System Administraor</span></div>
+							</article>
+							<article class="milestone top">
+								<div class="m-card"><strong>KPMG Global Services</strong><span>Azure CloudOps Consultant-Advisory Tech-Cloud Analytics</span></div>
+								<div class="connector"></div>
+								<div class="node"></div>
+								<span class="year-chip">04/20-8/20</span>
+							</article>
+							<article class="milestone bottom">
+								<span class="year-chip">08/20-08/21</span>
+								<div class="node"></div>
+								<div class="connector"></div>
+								<div class="m-card"><strong>KPMG Global Services</strong><span>Azure CloudOps Consultant-Architecture &amp; Platfrom Engineering</span></div>
+							</article>
+							<article class="milestone top">
+								<div class="m-card"><strong>KPMG Global Services</strong><span>Senior CloudOps Consultant-Architecture &amp; Platfrom Engineering</span></div>
+								<div class="connector"></div>
+								<div class="node"></div>
+								<span class="year-chip">08/21-08/22</span>
+							</article>
+							<article class="milestone bottom">
+								<span class="year-chip">08/22-08/24</span>
+								<div class="node"></div>
+								<div class="connector"></div>
+								<div class="m-card"><strong>Morgan Stanley</strong><span>Manager Data Engineering</span></div>
+							</article>
+							<article class="milestone top">
+								<div class="m-card"><strong>Morgan Stanley</strong><span>Senior Manager Data Engineering</span></div>
+								<div class="connector"></div>
+								<div class="node"></div>
+								<span class="year-chip">01/24-Present</span>
+							</article>
+						</div>
+					</div>
 				</div>
 			</section>
 		</div>
