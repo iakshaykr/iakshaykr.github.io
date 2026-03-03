@@ -15,6 +15,64 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="css/elite-neural.css" />
+	<style>
+		#main {
+			padding-top: 8px;
+		}
+
+		#main .contact-grid {
+			display: grid;
+			grid-template-columns: minmax(220px, 340px) 1fr;
+			gap: 24px;
+			align-items: start;
+		}
+
+		#main .images_holder {
+			float: none;
+			width: 100%;
+			margin: 0;
+		}
+
+		#main .box_contact {
+			margin: 0;
+			padding: 14px;
+			border: 1px solid rgba(127, 201, 255, 0.22);
+			border-radius: 16px;
+			background: rgba(10, 16, 38, 0.58);
+		}
+
+		#main .box_contact span {
+			display: block;
+			margin: 0 0 10px;
+			padding: 10px 12px 10px 52px;
+			font-size: 1.02rem;
+			line-height: 1.4;
+			border: 1px solid rgba(127, 201, 255, 0.2);
+			border-radius: 10px;
+			background-color: rgba(13, 20, 46, 0.74);
+			background-position: 14px center;
+			background-size: 20px 20px;
+		}
+
+		#main .box_contact span:last-child {
+			margin-bottom: 0;
+		}
+
+		#main .box_contact a {
+			color: #dce8ff;
+			text-decoration: none;
+		}
+
+		#main .box_contact a:hover {
+			color: #7fffd4;
+		}
+
+		@media (max-width: 900px) {
+			#main .contact-grid {
+				grid-template-columns: 1fr;
+			}
+		}
+	</style>
 	<!--[if lt IE 9]>
 		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
@@ -40,15 +98,16 @@
 		</div>
 		<div class="wrapper-holder grey">
 			<section id="main">
-				<div class="images_holder"><img src="images/iakshaykr.jpg" alt=""></div>
-				<div class="box_contact">
-					<span class="email">akshaykr9531@gmail.com</span>
-					<span class="phone">+91 8197705676</span>
-					<span class="linkedin"><a href='https://www.linkedin.com/in/iakshaykr' target="_blank">Linkedin Profile</a></span>
-                    <span class="github"><a href='https://github.com//iakshaykr' target="_blank">Github Repository</a></span>
-                     <span class="docker"><a href='https://hub.docker.com/u/iakshaykr' target="_blank">Docker Repository</a></span>
-                     <span class="stack"><a href='https://devops.stackexchange.com/users/17043/akshay-kumar' target="_blank">Sackexchange Profile</a></span>
-                   
+				<div class="contact-grid">
+					<div class="images_holder"><img src="images/iakshaykr.jpg" alt="Akshay Kumar"></div>
+					<div class="box_contact">
+						<span class="email">akshaykr9531@gmail.com</span>
+						<span class="phone">+91 8197705676</span>
+						<span class="linkedin"><a href='https://www.linkedin.com/in/iakshaykr' target="_blank">Linkedin Profile</a></span>
+						<span class="github"><a href='https://github.com/iakshaykr' target="_blank">Github Repository</a></span>
+						<span class="docker"><a href='https://hub.docker.com/u/iakshaykr' target="_blank">Docker Repository</a></span>
+						<span class="stack"><a href='https://devops.stackexchange.com/users/17043/akshay-kumar' target="_blank">Stackexchange Profile</a></span>
+					</div>
 				</div>
 				<div class="clear"></div>
 			</section>
