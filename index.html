@@ -189,95 +189,61 @@
 		}
 
 		.career-graph {
-			max-width: 1280px;
+			max-width: 980px;
 			margin: 0 auto 24px;
-			padding: 26px;
-			border-radius: 22px;
+			padding: 14px;
+			border-radius: 16px;
 			border: 1px solid rgba(127, 201, 255, 0.24);
-			background: linear-gradient(145deg, rgba(8, 18, 46, 0.76), rgba(5, 12, 30, 0.66));
-			box-shadow: 0 18px 34px rgba(0, 0, 0, 0.3);
-			position: relative;
+			background: linear-gradient(145deg, rgba(10, 20, 48, 0.72), rgba(8, 16, 36, 0.58));
+			box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
 		}
 
-		.career-track {
-			position: absolute;
-			left: 26px;
-			right: 26px;
-			top: 126px;
-			height: 4px;
-			border-radius: 999px;
-			background: linear-gradient(90deg, rgba(117, 189, 255, 0.35), rgba(137, 255, 223, 0.4));
-			z-index: 0;
-		}
-
-		.career-cards {
-			display: grid;
-			grid-template-columns: repeat(4, minmax(230px, 1fr));
-			gap: 26px;
-			position: relative;
-			z-index: 1;
-		}
-
-		.career-cards .break-row {
-			grid-column: 1 / -1;
-			height: 0;
-		}
-
-		.career-card {
-			background: linear-gradient(160deg, rgba(10, 22, 54, 0.94), rgba(7, 16, 42, 0.92));
-			border: 1px solid rgba(102, 179, 255, 0.32);
-			border-radius: 24px;
-			min-height: 280px;
-			padding: 18px 18px 20px;
-			position: relative;
-			overflow: hidden;
-			box-shadow: inset 0 0 0 1px rgba(128, 229, 255, 0.08);
-		}
-
-		.career-card::before {
-			content: "";
-			position: absolute;
-			inset: 0;
-			background: radial-gradient(circle at 20% 0%, rgba(80, 170, 255, 0.14), transparent 45%);
-			pointer-events: none;
-		}
-
-		.career-card .card-date {
-			display: inline-block;
+		.career-graph svg {
+			display: block;
 			width: 100%;
-			text-align: center;
-			font-weight: 700;
-			color: #dff4ff;
+			height: auto;
+		}
+
+		.graph-grid line {
+			stroke: rgba(127, 201, 255, 0.2);
+			stroke-width: 1;
+		}
+
+		.graph-trend {
+			fill: none;
+			stroke: #63d2ff;
+			stroke-width: 3;
+			stroke-linecap: round;
+			stroke-linejoin: round;
+			filter: drop-shadow(0 0 8px rgba(99, 210, 255, 0.35));
+			stroke-dasharray: 700;
+			stroke-dashoffset: 700;
+			animation: drawLine 1.9s ease forwards;
+		}
+
+		.graph-point {
+			fill: #9fffe2;
+			stroke: #0d1b3d;
+			stroke-width: 2;
+		}
+
+		.graph-label {
+			fill: #dce9ff;
+			font-size: 12px;
+			font-family: "Space Grotesk", sans-serif;
+		}
+
+		.graph-title {
+			fill: #a9bfdc;
+			font-size: 11px;
 			letter-spacing: 0.04em;
-			padding: 8px 10px;
-			border-radius: 999px;
-			border: 1px solid rgba(122, 204, 255, 0.45);
-			background: linear-gradient(90deg, rgba(62, 130, 188, 0.45), rgba(77, 161, 168, 0.42));
+			text-transform: uppercase;
 		}
 
-		.career-card .pin {
-			width: 30px;
-			height: 30px;
-			border-radius: 50%;
-			margin: 12px auto 14px;
-			background: radial-gradient(circle at 35% 30%, #8effcf, #39ad7f);
-			box-shadow: 0 0 0 7px rgba(142, 255, 207, 0.2);
-		}
-
-		.career-card h3 {
-			color: #f0f8ff !important;
-			font-size: 2rem;
-			margin: 0 0 10px;
-			text-align: center;
-			font-weight: 700;
-		}
-
-		.career-card p {
-			color: #aec4e3 !important;
-			margin: 0;
-			font-size: 1.15rem;
-			line-height: 1.25;
-			text-align: center;
+		@keyframes drawLine {
+			to {
+				stroke-dashoffset: 0;
+			}
 		}
 
 		#main {
@@ -285,9 +251,83 @@
 			padding-top: 44px !important;
 		}
 
+		.box_timeline {
+			background: linear-gradient(145deg, rgba(10, 16, 38, 0.72), rgba(8, 16, 35, 0.55));
+			border: 1px solid var(--line);
+			border-radius: 18px;
+			padding: 16px !important;
+			backdrop-filter: blur(8px);
+			box-shadow: 0 24px 44px rgba(0, 0, 0, 0.25);
+			position: relative;
+		}
+
+		.box_timeline ul li {
+			background: linear-gradient(135deg, rgba(14, 23, 52, 0.85), rgba(12, 19, 43, 0.75));
+			border: 1px solid rgba(90, 175, 255, 0.2);
+			border-radius: 14px;
+			padding: 14px 16px !important;
+			margin-bottom: 12px !important;
+			transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+			animation: riseIn 0.6s ease both;
+			position: relative;
+			overflow: hidden;
+		}
+
+		.box_timeline ul li::before {
+			content: "";
+			position: absolute;
+			left: 0;
+			top: 0;
+			bottom: 0;
+			width: 3px;
+			background: linear-gradient(180deg, #4dd2ff, #7fffd4);
+			opacity: 0.85;
+		}
+
+		.box_timeline ul li:hover {
+			transform: translateY(-3px) scale(1.01);
+			border-color: rgba(127, 255, 212, 0.5);
+			box-shadow: 0 10px 26px rgba(41, 160, 255, 0.16);
+		}
+
+		.box_timeline .date span {
+			background: linear-gradient(90deg, rgba(77, 210, 255, 0.2), rgba(127, 255, 212, 0.2));
+			border: 1px solid rgba(127, 201, 255, 0.4);
+			color: #d9f9ff !important;
+			border-radius: 999px;
+			padding: 5px 12px !important;
+			font-weight: 700;
+			display: inline-block;
+		}
+
+		.box_timeline h3 {
+			color: #f4f9ff !important;
+			font-weight: 700 !important;
+			letter-spacing: 0.02em;
+			margin-top: 8px;
+		}
+
+		.box_timeline p,
 		#header p {
 			color: var(--muted) !important;
 			text-align: center;
+		}
+
+		.box_timeline p {
+			text-align: left;
+			margin-top: 5px;
+		}
+
+		@keyframes riseIn {
+			from {
+				opacity: 0;
+				transform: translateY(8px);
+			}
+
+			to {
+				opacity: 1;
+				transform: translateY(0);
+			}
 		}
 
 		@media (max-width: 768px) {
@@ -299,28 +339,17 @@
 				font-size: 24px !important;
 			}
 
+			.box_timeline ul li {
+				padding: 12px !important;
+			}
+
 			.hero-cta a {
 				width: 100%;
 				text-align: center;
 			}
 
-			.career-track {
-				display: none;
-			}
-
-			.career-cards {
-				grid-template-columns: 1fr;
-				gap: 14px;
-			}
-
-			.career-card {
-				min-height: auto;
-			}
-		}
-
-		@media (min-width: 769px) and (max-width: 1240px) {
-			.career-cards {
-				grid-template-columns: repeat(3, minmax(220px, 1fr));
+			.graph-label {
+				font-size: 10px;
 			}
 		}
 	</style>
@@ -369,51 +398,88 @@
 					<p>A timeline of roles, growth, and impact across cloud and data engineering.</p>
 				</div>
 				<div class="career-graph">
-					<div class="career-track"></div>
-					<div class="career-cards">
-						<article class="career-card">
-							<span class="card-date">07/17-06/18</span>
-							<div class="pin"></div>
-							<h3>IBM</h3>
-							<p>IT System Administrator</p>
-						</article>
-						<article class="career-card">
-							<span class="card-date">6/18-3/20</span>
-							<div class="pin"></div>
-							<h3>CITRIX R&amp;D</h3>
-							<p>L3 System Administrator</p>
-						</article>
-						<article class="career-card">
-							<span class="card-date">04/20-8/20</span>
-							<div class="pin"></div>
-							<h3>KPMG Global Services</h3>
-							<p>Azure CloudOps Consultant - Advisory Tech - Cloud Analytics</p>
-						</article>
-						<article class="career-card">
-							<span class="card-date">08/20-08/21</span>
-							<div class="pin"></div>
-							<h3>KPMG Global Services</h3>
-							<p>Azure CloudOps Consultant - Architecture &amp; Platform Engineering</p>
-						</article>
-						<div class="break-row" aria-hidden="true"></div>
-						<article class="career-card">
-							<span class="card-date">08/21-08/22</span>
-							<div class="pin"></div>
-							<h3>KPMG Global Services</h3>
-							<p>Senior CloudOps Consultant - Architecture &amp; Platform Engineering</p>
-						</article>
-						<article class="career-card">
-							<span class="card-date">08/22-08/24</span>
-							<div class="pin"></div>
-							<h3>Morgan Stanley</h3>
-							<p>Manager Data Engineering</p>
-						</article>
-						<article class="career-card">
-							<span class="card-date">01/24-Present</span>
-							<div class="pin"></div>
-							<h3>Morgan Stanley</h3>
-							<p>Senior Manager Data Engineering</p>
-						</article>
+					<svg viewBox="0 0 920 260" role="img" aria-label="Career growth graph from system admin to senior manager in data engineering">
+						<g class="graph-grid">
+							<line x1="60" y1="40" x2="890" y2="40"></line>
+							<line x1="60" y1="95" x2="890" y2="95"></line>
+							<line x1="60" y1="150" x2="890" y2="150"></line>
+							<line x1="60" y1="205" x2="890" y2="205"></line>
+						</g>
+						<polyline class="graph-trend" points="70,210 190,190 310,165 430,145 550,125 670,100 790,75"></polyline>
+						<circle class="graph-point" cx="70" cy="210" r="6"></circle>
+						<circle class="graph-point" cx="190" cy="190" r="6"></circle>
+						<circle class="graph-point" cx="310" cy="165" r="6"></circle>
+						<circle class="graph-point" cx="430" cy="145" r="6"></circle>
+						<circle class="graph-point" cx="550" cy="125" r="6"></circle>
+						<circle class="graph-point" cx="670" cy="100" r="6"></circle>
+						<circle class="graph-point" cx="790" cy="75" r="6"></circle>
+						<text class="graph-title" x="66" y="24">Career Growth Graph</text>
+						<text class="graph-label" x="38" y="212">L1</text>
+						<text class="graph-label" x="38" y="152">L2</text>
+						<text class="graph-label" x="38" y="97">L3</text>
+						<text class="graph-label" x="38" y="42">L4</text>
+						<text class="graph-label" x="50" y="236">IBM</text>
+						<text class="graph-label" x="156" y="236">Citrix</text>
+						<text class="graph-label" x="274" y="236">KPMG 1</text>
+						<text class="graph-label" x="394" y="236">KPMG 2</text>
+						<text class="graph-label" x="514" y="236">KPMG 3</text>
+						<text class="graph-label" x="624" y="236">MS Mgr</text>
+						<text class="graph-label" x="744" y="236">MS Sr Mgr</text>
+					</svg>
+				</div>
+				<div class="box_timeline_holder">
+					<div class="box_timeline">
+						<ul>
+							<li>
+								<div class="date">
+									<span>07/17-06/18</span>
+								</div>
+								<h3>IBM</h3>
+								<p>IT System Administraor</p>
+							</li>
+							<li>
+								<div class="date">
+									<span>6/18-3/20</span>
+								</div>
+								<h3>CITRIX R&D</h3>
+								<p>L3 System Administraor </p>
+							</li>
+							<li>
+								<div class="date">
+									<span>04/20-8/20</span>
+								</div>
+								<h3>KPMG Global Services </h3>
+								<p>Azure CloudOps Consultant-Advisory Tech-Cloud Analytics</p>
+							</li>
+							<li>
+								<div class="date">
+									<span>08/20-08/21</span>
+								</div>
+								<h3>KPMG Global Services </h3>
+								<p>Azure CloudOps Consultant-Architecture & Platfrom Engineering</p>
+							</li>
+							<li>
+								<div class="date">
+									<span>08/21-08/22</span>
+								</div>
+								<h3>KPMG Global Services </h3>
+								<p>Senior CloudOps Consultant-Architecture & Platfrom Engineering</p>
+							</li>
+							<li>
+								<div class="date">
+									<span>08/22-08/24</span>
+								</div>
+								<h3>Morgan Stanley </h3>
+								<p>Manager Data Engineering</p>
+							</li>
+							<li>
+								<div class="date">
+									<span>01/24-Present</span>
+								</div>
+								<h3>Morgan Stanley </h3>
+								<p>Senior Manager Data Engineering</p>
+							</li>
+						</ul>
 					</div>
 				</div>
 			</section>
