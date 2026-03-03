@@ -240,6 +240,31 @@
 			text-transform: uppercase;
 		}
 
+		.graph-details {
+			margin-top: 14px;
+			padding: 0;
+			list-style: none;
+			display: grid;
+			grid-template-columns: repeat(2, minmax(260px, 1fr));
+			gap: 10px;
+		}
+
+		.graph-details li {
+			border: 1px solid rgba(100, 175, 255, 0.24);
+			border-radius: 12px;
+			padding: 10px 12px;
+			background: rgba(10, 20, 50, 0.6);
+			color: #b5c9e5;
+			font-size: 0.93rem;
+			line-height: 1.35;
+		}
+
+		.graph-details strong {
+			color: #ecf6ff;
+			display: block;
+			margin-bottom: 4px;
+		}
+
 		@keyframes drawLine {
 			to {
 				stroke-dashoffset: 0;
@@ -351,6 +376,10 @@
 			.graph-label {
 				font-size: 10px;
 			}
+
+			.graph-details {
+				grid-template-columns: 1fr;
+			}
 		}
 	</style>
 </head>
@@ -426,61 +455,15 @@
 						<text class="graph-label" x="624" y="236">MS Mgr</text>
 						<text class="graph-label" x="744" y="236">MS Sr Mgr</text>
 					</svg>
-				</div>
-				<div class="box_timeline_holder">
-					<div class="box_timeline">
-						<ul>
-							<li>
-								<div class="date">
-									<span>07/17-06/18</span>
-								</div>
-								<h3>IBM</h3>
-								<p>IT System Administraor</p>
-							</li>
-							<li>
-								<div class="date">
-									<span>6/18-3/20</span>
-								</div>
-								<h3>CITRIX R&D</h3>
-								<p>L3 System Administraor </p>
-							</li>
-							<li>
-								<div class="date">
-									<span>04/20-8/20</span>
-								</div>
-								<h3>KPMG Global Services </h3>
-								<p>Azure CloudOps Consultant-Advisory Tech-Cloud Analytics</p>
-							</li>
-							<li>
-								<div class="date">
-									<span>08/20-08/21</span>
-								</div>
-								<h3>KPMG Global Services </h3>
-								<p>Azure CloudOps Consultant-Architecture & Platfrom Engineering</p>
-							</li>
-							<li>
-								<div class="date">
-									<span>08/21-08/22</span>
-								</div>
-								<h3>KPMG Global Services </h3>
-								<p>Senior CloudOps Consultant-Architecture & Platfrom Engineering</p>
-							</li>
-							<li>
-								<div class="date">
-									<span>08/22-08/24</span>
-								</div>
-								<h3>Morgan Stanley </h3>
-								<p>Manager Data Engineering</p>
-							</li>
-							<li>
-								<div class="date">
-									<span>01/24-Present</span>
-								</div>
-								<h3>Morgan Stanley </h3>
-								<p>Senior Manager Data Engineering</p>
-							</li>
-						</ul>
-					</div>
+					<ul class="graph-details">
+						<li><strong>07/17-06/18 • IBM</strong>IT System Administraor</li>
+						<li><strong>6/18-3/20 • CITRIX R&amp;D</strong>L3 System Administraor</li>
+						<li><strong>04/20-8/20 • KPMG Global Services</strong>Azure CloudOps Consultant-Advisory Tech-Cloud Analytics</li>
+						<li><strong>08/20-08/21 • KPMG Global Services</strong>Azure CloudOps Consultant-Architecture &amp; Platfrom Engineering</li>
+						<li><strong>08/21-08/22 • KPMG Global Services</strong>Senior CloudOps Consultant-Architecture &amp; Platfrom Engineering</li>
+						<li><strong>08/22-08/24 • Morgan Stanley</strong>Manager Data Engineering</li>
+						<li><strong>01/24-Present • Morgan Stanley</strong>Senior Manager Data Engineering</li>
+					</ul>
 				</div>
 			</section>
 		</div>
