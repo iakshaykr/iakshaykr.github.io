@@ -1,286 +1,114 @@
 <!DOCTYPE html>
-<html lang="en">
+<!--[if lte IE 8]> <html class="oldie" lang="en"> <![endif]-->
+<!--[if IE 9]> <html class="ie9" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!-->
+<html lang="en"> <!--<![endif]-->
 
 <head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Akshay Kumar | Cloud & AI Platform Engineer</title>
-	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-	<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-	<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-
-	<style>
-		* {
-			margin: 0;
-			padding: 0;
-			box-sizing: border-box;
-		}
-
-		body {
-			font-family: 'Inter', sans-serif;
-			background: #0f172a;
-			color: #f1f5f9;
-			overflow-x: hidden;
-			scroll-behavior: smooth;
-		}
-
-		.gradient-bg {
-			position: fixed;
-			width: 100%;
-			height: 100%;
-			z-index: -2;
-			background: linear-gradient(-45deg, #0f172a, #1e293b, #0ea5e9, #6366f1);
-			background-size: 400% 400%;
-			animation: gradientMove 12s ease infinite;
-			opacity: 0.25;
-		}
-
-		@keyframes gradientMove {
-			0% {
-				background-position: 0% 50%
-			}
-
-			50% {
-				background-position: 100% 50%
-			}
-
-			100% {
-				background-position: 0% 50%
-			}
-		}
-
-		#particles-js {
-			position: fixed;
-			width: 100%;
-			height: 100%;
-			z-index: -1;
-		}
-
-		nav {
-			position: fixed;
-			width: 100%;
-			top: 0;
-			background: rgba(15, 23, 42, 0.85);
-			backdrop-filter: blur(15px);
-			padding: 15px 8%;
-			display: flex;
-			justify-content: space-between;
-			z-index: 1000;
-		}
-
-		nav a {
-			color: #f1f5f9;
-			text-decoration: none;
-			margin-left: 25px;
-			font-weight: 500;
-		}
-
-		nav a:hover {
-			color: #38bdf8;
-		}
-
-		section {
-			padding: 100px 8%;
-			position: relative;
-			z-index: 1;
-		}
-
-		h1 {
-			font-size: 3.5rem;
-			font-weight: 800;
-			background: linear-gradient(90deg, #38bdf8, #6366f1);
-			-webkit-background-clip: text;
-			-webkit-text-fill-color: transparent;
-		}
-
-		h2 {
-			font-size: 2rem;
-			margin-bottom: 20px;
-			color: #38bdf8;
-		}
-
-		p {
-			color: #cbd5e1;
-			line-height: 1.7;
-		}
-
-		.hero {
-			height: 100vh;
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
-		}
-
-		.subtitle {
-			font-size: 1.5rem;
-			margin-top: 15px;
-		}
-
-		.btn {
-			display: inline-block;
-			margin-top: 25px;
-			padding: 14px 30px;
-			border-radius: 40px;
-			background: linear-gradient(90deg, #38bdf8, #6366f1);
-			color: white;
-			text-decoration: none;
-			font-weight: 600;
-			transition: 0.3s;
-			box-shadow: 0 10px 30px rgba(56, 189, 248, 0.4);
-		}
-
-		.btn:hover {
-			transform: translateY(-5px);
-		}
-
-		.grid {
-			display: grid;
-			grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-			gap: 30px;
-			margin-top: 40px;
-		}
-
-		.card {
-			background: rgba(30, 41, 59, 0.85);
-			padding: 25px;
-			border-radius: 20px;
-			backdrop-filter: blur(10px);
-			border: 1px solid rgba(255, 255, 255, 0.05);
-			transition: 0.4s;
-		}
-
-		.card:hover {
-			transform: translateY(-8px);
-			box-shadow: 0 20px 40px rgba(56, 189, 248, 0.25);
-		}
-
-		footer {
-			text-align: center;
-			padding: 30px;
-			color: #64748b;
-			border-top: 1px solid rgba(255, 255, 255, 0.05);
-		}
-	</style>
+	<meta charset="utf-8">
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="format-detection" content="telephone=no">
+	<title>AKSHAY KUMAR</title>
+	<link rel="stylesheet" href="js/fancybox/jquery.fancybox.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="css/all.css" />
+	<link rel="stylesheet" href="css/screen.css" />
+	<!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
 </head>
 
 <body>
+	<div id="wrapper">
+		<div class="wrapper-holder">
+			<header id="header">
+				<a class="menu_trigger" href="#">menu</a>
+				<nav id="nav">
+					<ul>
+						<li><a class="active" href="index.html">Home</a></li>
+						<li><a href="myskills.html">myskills</a></li>
+						<li><a href="certifications.html">certifications</a></li>
+						<li><a href="contact.html">contact</a></li>
+						<li><a
+								href="https://drive.google.com/file/d/1yHb5BgwJjOGTr9eFsDbFmvHBJeA5qkXu/view?usp=sharing">Resume</a>
+						</li>
+						<li><a href="projects.html">Projects</a></li>
+					</ul>
+				</nav>
+				<h1 class="logo">Akshay Kumar</h1>
+				<p align="center">凡以与H几丫 is #learner#investigator#implementor.</p>
 
-	<div class="gradient-bg"></div>
-	<div id="particles-js"></div>
+				<h2 class="slogan">Senior Manager,Data Engineering</h2>
 
-	<nav>
-		<div><strong>Akshay Kumar</strong></div>
-		<div>
-			<a href="#about">About</a>
-			<a href="#experience">Experience</a>
-			<a href="#skills">Skills</a>
-			<a href="#certifications">Certifications</a>
-			<a href="#contact">Contact</a>
+			</header>
 		</div>
-	</nav>
-
-	<section class="hero">
-		<h1>Akshay Kumar</h1>
-		<div class="subtitle"><span id="typed"></span></div>
-		<p style="max-width:700px;margin-top:20px;">
-			Director – Cloud & ML Platform with 7+ years of experience designing and scaling enterprise-grade AI, ML,
-			and cloud platforms across Azure, AWS, and GCP.
-			Specialized in Azure Databricks, Terraform, MLOps, Generative AI, and enterprise security governance.
-		</p>
-		<a href="resume.pdf" class="btn" download>Download Resume</a>
-	</section>
-
-	<section id="about">
-		<h2>Professional Summary</h2>
-		<p>
-			Experienced Cloud & Databricks AI/ML Platform Engineer with deep expertise in Infrastructure as Code, CI/CD
-			automation, MLflow-driven MLOps,
-			model serving, drift detection, canary deployments, and enterprise AI lifecycle management.
-		</p>
-	</section>
-
-	<section id="experience">
-		<h2>Experience</h2>
-		<div class="grid">
-			<div class="card">
-				<h3>Morgan Stanley – Director, Cloud & ML Platform (2022–Present)</h3>
-				<p>Architected end-to-end Azure ML platforms including Compute, Storage, Networking, Identity,
-					Monitoring & Security.
-					Built scalable Databricks pipelines, feature stores, ML serving APIs, and drift detection systems.
-					Implemented Terraform-based modular IaC and enterprise-grade MLOps frameworks.</p>
-			</div>
-			<div class="card">
-				<h3>KPMG – Consultant (2020–2022)</h3>
-				<p>Delivered Azure & AWS infrastructure automation via CI/CD.
-					Implemented monitoring with Azure Monitor, Datadog, KQL.
-					Designed streaming architectures using AWS Kinesis & OpenSearch.</p>
-			</div>
+		<div class="wrapper-holder grey">
+			<section id="main">
+				<h2>Here are my Expereince</h2>
+				<div class="box_timeline_holder">
+					<div class="box_timeline">
+						<ul>
+							<li>
+								<div class="date">
+									<span>07/17-06/18</span>
+								</div>
+								<h3>IBM</h3>
+								<p>IT System Administraor</p>
+							</li>
+							<li>
+								<div class="date">
+									<span>6/18-3/20</span>
+								</div>
+								<h3>CITRIX R&D</h3>
+								<p>L3 System Administraor </p>
+							</li>
+							<li>
+								<div class="date">
+									<span>04/20-8/20</span>
+								</div>
+								<h3>KPMG Global Services </h3>
+								<p>Azure CloudOps Consultant-Advisory Tech-Cloud Analytics</p>
+							<li>
+								<div class="date">
+									<span>08/20-08/21</span>
+								</div>
+								<h3>KPMG Global Services </h3>
+								<p>Azure CloudOps Consultant-Architecture & Platfrom Engineering</p>
+							</li>
+							<li>
+								<div class="date">
+									<span>08/21-08/22</span>
+								</div>
+								<h3>KPMG Global Services </h3>
+								<p>Senior CloudOps Consultant-Architecture & Platfrom Engineering</p>
+							</li>
+							<li>
+								<div class="date">
+									<span>08/22-08/24</span>
+								</div>
+								<h3>Morgan Stanley </h3>
+								<p>Manager Data Engineering</p>
+							</li>
+							<li>
+								<div class="date">
+									<span>01/24-Present</span>
+								</div>
+								<h3>Morgan Stanley </h3>
+								<p>Senior Manager Data Engineering</p>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</section>
 		</div>
-	</section>
-
-	<section id="skills">
-		<h2>Core Expertise</h2>
-		<div class="grid">
-			<div class="card">
-				<h3>Cloud Engineering</h3>
-				<p>Azure, AWS, GCP, AKS, Terraform, ARM, CloudFormation</p>
-			</div>
-			<div class="card">
-				<h3>MLOps & AI</h3>
-				<p>MLflow, Databricks, SageMaker, Vertex AI, GPT-4, Gemini</p>
-			</div>
-			<div class="card">
-				<h3>Data Engineering</h3>
-				<p>PySpark, Spark SQL, Snowflake, Kafka, Delta Lake</p>
-			</div>
-			<div class="card">
-				<h3>Security & Governance</h3>
-				<p>ISO 27001, SOC 2, IAM, Defender for Cloud, Qualys</p>
-			</div>
-		</div>
-	</section>
-
-	<section id="certifications">
-		<h2>Certifications</h2>
-		<div class="grid">
-			<div class="card">
-				<p>Microsoft Certified: Azure Solutions Architect Expert</p>
-			</div>
-			<div class="card">
-				<p>Microsoft Azure (Admin, Developer, AI)</p>
-			</div>
-			<div class="card">
-				<p>Databricks (GenAI, Architect)</p>
-			</div>
-			<div class="card">
-				<p>Oracle Cloud (GenAI)</p>
-			</div>
-		</div>
-	</section>
-
-	<section id="contact">
-		<h2>Contact</h2>
-		<p>Email: akshaykr9531@gmail.com</p>
-		<p>Location: Bangalore, India</p>
-		<p>LinkedIn: www.linkedin.com/in/iakshaykr/</p>
-		<p>GitHub: https://github.com/iakshaykr/AI_ML</p>
-	</section>
-
-	<footer>
-		© 2026 Akshay Kumar | Cloud & AI Platform Engineer
-	</footer>
-
-	<script>
-		new Typed('#typed', {
-			strings: ["Director – Cloud & ML Platform", "Azure & Databricks Architect", "AI & Generative AI Engineer"],
-			typeSpeed: 60, backSpeed: 40, loop: true
-		});
-
-		particlesJS("particles-js", {
-			particles: { number: { value: 60 }, size: { value: 2 }, move: { speed: 1.5 }, line_linked: { enable: true, opacity: 0.1 } }
-		});
-	</script>
-
+	</div>
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script src="js/isotope.pkgd.min.js"></script>
+	<script src="js/cells-by-row.js"></script>
+	<script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" src="js/fancybox/jquery.fancybox.pack.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
 </body>
 
 </html>
