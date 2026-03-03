@@ -188,39 +188,6 @@
 			letter-spacing: 0.02em;
 		}
 
-		.experience-dashboard {
-			max-width: 980px;
-			margin: 0 auto 24px;
-			display: grid;
-			grid-template-columns: repeat(4, minmax(120px, 1fr));
-			gap: 12px;
-		}
-
-		.exp-stat {
-			background: linear-gradient(145deg, rgba(10, 21, 50, 0.8), rgba(9, 17, 38, 0.65));
-			border: 1px solid rgba(116, 191, 255, 0.25);
-			border-radius: 14px;
-			padding: 12px;
-			text-align: center;
-			box-shadow: 0 8px 22px rgba(0, 0, 0, 0.24);
-		}
-
-		.exp-stat .value {
-			display: block;
-			font-family: "Orbitron", sans-serif;
-			font-size: 1.3rem;
-			color: #dff5ff;
-			margin-bottom: 3px;
-		}
-
-		.exp-stat .label {
-			display: block;
-			font-size: 0.78rem;
-			letter-spacing: 0.04em;
-			color: #9db3d3;
-			text-transform: uppercase;
-		}
-
 		#main {
 			background: none !important;
 			padding-top: 44px !important;
@@ -248,10 +215,6 @@
 			overflow: hidden;
 		}
 
-		.box_timeline ul {
-			counter-reset: exp-step;
-		}
-
 		.box_timeline ul li::before {
 			content: "";
 			position: absolute;
@@ -261,18 +224,6 @@
 			width: 3px;
 			background: linear-gradient(180deg, #4dd2ff, #7fffd4);
 			opacity: 0.85;
-		}
-
-		.box_timeline ul li::after {
-			counter-increment: exp-step;
-			content: counter(exp-step, decimal-leading-zero);
-			position: absolute;
-			right: 12px;
-			top: 10px;
-			font-family: "Orbitron", sans-serif;
-			font-size: 0.72rem;
-			letter-spacing: 0.07em;
-			color: rgba(185, 222, 255, 0.7);
 		}
 
 		.box_timeline ul li:hover {
@@ -338,10 +289,6 @@
 				width: 100%;
 				text-align: center;
 			}
-
-			.experience-dashboard {
-				grid-template-columns: repeat(2, minmax(120px, 1fr));
-			}
 		}
 	</style>
 </head>
@@ -387,12 +334,6 @@
 				<div class="section-intro">
 					<h2>Career Experience</h2>
 					<p>A timeline of roles, growth, and impact across cloud and data engineering.</p>
-				</div>
-				<div class="experience-dashboard">
-					<div class="exp-stat"><span class="value">8+</span><span class="label">Years</span></div>
-					<div class="exp-stat"><span class="value">7</span><span class="label">Roles</span></div>
-					<div class="exp-stat"><span class="value">4</span><span class="label">Companies</span></div>
-					<div class="exp-stat"><span class="value">Cloud + AI</span><span class="label">Core Focus</span></div>
 				</div>
 				<div class="box_timeline_holder">
 					<div class="box_timeline">
