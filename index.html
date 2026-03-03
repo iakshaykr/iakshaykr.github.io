@@ -229,7 +229,7 @@
 
 		.graph-label {
 			fill: #dce9ff;
-			font-size: 12px;
+			font-size: 10px;
 			font-family: "Space Grotesk", sans-serif;
 		}
 
@@ -238,6 +238,24 @@
 			font-size: 11px;
 			letter-spacing: 0.04em;
 			text-transform: uppercase;
+		}
+
+		.graph-note {
+			fill: rgba(8, 20, 46, 0.88);
+			stroke: rgba(126, 201, 255, 0.45);
+			stroke-width: 1;
+		}
+
+		.graph-note-title {
+			fill: #ebf5ff;
+			font-size: 9px;
+			font-weight: 700;
+			letter-spacing: 0.03em;
+		}
+
+		.graph-note-sub {
+			fill: #b2c7e5;
+			font-size: 8px;
 		}
 
 		@keyframes drawLine {
@@ -399,7 +417,7 @@
 					<p>A timeline of roles, growth, and impact across cloud and data engineering.</p>
 				</div>
 				<div class="career-graph">
-					<svg viewBox="0 0 1220 520" role="img" aria-label="Career experience scatter plot with roles and tenure details">
+					<svg viewBox="0 0 1220 620" role="img" aria-label="Career experience scatter plot with roles and tenure details">
 						<g class="graph-grid">
 							<line x1="40" y1="80" x2="1180" y2="80"></line>
 							<line x1="40" y1="170" x2="1180" y2="170"></line>
@@ -419,29 +437,57 @@
 						<circle cx="920" cy="195" r="24" fill="rgba(77,210,255,0.88)" stroke="rgba(200,245,255,0.95)" stroke-width="2"></circle>
 						<circle cx="1080" cy="165" r="26" fill="rgba(127,255,212,0.88)" stroke="rgba(220,255,245,0.98)" stroke-width="2"></circle>
 
-						<text class="graph-label" x="62" y="362">07/17-06/18 • IBM</text>
-						<text class="graph-label" x="62" y="384">IT System Administraor</text>
+						<g transform="translate(45,356)">
+							<rect class="graph-note" width="150" height="70" rx="8"></rect>
+							<text class="graph-note-title" x="75" y="17" text-anchor="middle">07/17-06/18 • IBM</text>
+							<text class="graph-note-sub" x="75" y="37" text-anchor="middle">IT System</text>
+							<text class="graph-note-sub" x="75" y="50" text-anchor="middle">Administraor</text>
+						</g>
 
-						<text class="graph-label" x="222" y="337">6/18-3/20 • CITRIX R&amp;D</text>
-						<text class="graph-label" x="222" y="359">L3 System Administraor</text>
+						<g transform="translate(205,332)">
+							<rect class="graph-note" width="150" height="70" rx="8"></rect>
+							<text class="graph-note-title" x="75" y="17" text-anchor="middle">6/18-3/20 • CITRIX R&amp;D</text>
+							<text class="graph-note-sub" x="75" y="37" text-anchor="middle">L3 System</text>
+							<text class="graph-note-sub" x="75" y="50" text-anchor="middle">Administraor</text>
+						</g>
 
-						<text class="graph-label" x="382" y="307">04/20-8/20 • KPMG Global Services</text>
-						<text class="graph-label" x="382" y="329">Azure CloudOps Consultant-Advisory</text>
-						<text class="graph-label" x="382" y="351">Tech-Cloud Analytics</text>
+						<g transform="translate(365,302)">
+							<rect class="graph-note" width="150" height="82" rx="8"></rect>
+							<text class="graph-note-title" x="75" y="17" text-anchor="middle">04/20-8/20 • KPMG</text>
+							<text class="graph-note-sub" x="75" y="37" text-anchor="middle">Azure CloudOps Consultant</text>
+							<text class="graph-note-sub" x="75" y="50" text-anchor="middle">Advisory Tech-Cloud</text>
+							<text class="graph-note-sub" x="75" y="63" text-anchor="middle">Analytics</text>
+						</g>
 
-						<text class="graph-label" x="542" y="277">08/20-08/21 • KPMG Global Services</text>
-						<text class="graph-label" x="542" y="299">Azure CloudOps Consultant-Architecture</text>
-						<text class="graph-label" x="542" y="321">&amp; Platfrom Engineering</text>
+						<g transform="translate(525,272)">
+							<rect class="graph-note" width="150" height="82" rx="8"></rect>
+							<text class="graph-note-title" x="75" y="17" text-anchor="middle">08/20-08/21 • KPMG</text>
+							<text class="graph-note-sub" x="75" y="37" text-anchor="middle">Azure CloudOps Consultant</text>
+							<text class="graph-note-sub" x="75" y="50" text-anchor="middle">Architecture &amp; Platfrom</text>
+							<text class="graph-note-sub" x="75" y="63" text-anchor="middle">Engineering</text>
+						</g>
 
-						<text class="graph-label" x="702" y="252">08/21-08/22 • KPMG Global Services</text>
-						<text class="graph-label" x="702" y="274">Senior CloudOps Consultant-Architecture</text>
-						<text class="graph-label" x="702" y="296">&amp; Platfrom Engineering</text>
+						<g transform="translate(685,247)">
+							<rect class="graph-note" width="150" height="82" rx="8"></rect>
+							<text class="graph-note-title" x="75" y="17" text-anchor="middle">08/21-08/22 • KPMG</text>
+							<text class="graph-note-sub" x="75" y="37" text-anchor="middle">Senior CloudOps Consultant</text>
+							<text class="graph-note-sub" x="75" y="50" text-anchor="middle">Architecture &amp; Platfrom</text>
+							<text class="graph-note-sub" x="75" y="63" text-anchor="middle">Engineering</text>
+						</g>
 
-						<text class="graph-label" x="862" y="227">08/22-08/24 • Morgan Stanley</text>
-						<text class="graph-label" x="862" y="249">Manager Data Engineering</text>
+						<g transform="translate(850,222)">
+							<rect class="graph-note" width="150" height="70" rx="8"></rect>
+							<text class="graph-note-title" x="75" y="17" text-anchor="middle">08/22-08/24 • Morgan Stanley</text>
+							<text class="graph-note-sub" x="75" y="37" text-anchor="middle">Manager Data</text>
+							<text class="graph-note-sub" x="75" y="50" text-anchor="middle">Engineering</text>
+						</g>
 
-						<text class="graph-label" x="1022" y="197">01/24-Present • Morgan Stanley</text>
-						<text class="graph-label" x="1022" y="219">Senior Manager Data Engineering</text>
+						<g transform="translate(1030,192)">
+							<rect class="graph-note" width="175" height="70" rx="8"></rect>
+							<text class="graph-note-title" x="87" y="17" text-anchor="middle">01/24-Present • Morgan Stanley</text>
+							<text class="graph-note-sub" x="87" y="37" text-anchor="middle">Senior Manager Data</text>
+							<text class="graph-note-sub" x="87" y="50" text-anchor="middle">Engineering</text>
+						</g>
 					</svg>
 				</div>
 			</section>
