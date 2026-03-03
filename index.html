@@ -240,31 +240,6 @@
 			text-transform: uppercase;
 		}
 
-		.graph-details {
-			margin-top: 14px;
-			padding: 0;
-			list-style: none;
-			display: grid;
-			grid-template-columns: repeat(2, minmax(260px, 1fr));
-			gap: 10px;
-		}
-
-		.graph-details li {
-			border: 1px solid rgba(100, 175, 255, 0.24);
-			border-radius: 12px;
-			padding: 10px 12px;
-			background: rgba(10, 20, 50, 0.6);
-			color: #b5c9e5;
-			font-size: 0.93rem;
-			line-height: 1.35;
-		}
-
-		.graph-details strong {
-			color: #ecf6ff;
-			display: block;
-			margin-bottom: 4px;
-		}
-
 		@keyframes drawLine {
 			to {
 				stroke-dashoffset: 0;
@@ -377,9 +352,6 @@
 				font-size: 10px;
 			}
 
-			.graph-details {
-				grid-template-columns: 1fr;
-			}
 		}
 	</style>
 </head>
@@ -427,43 +399,48 @@
 					<p>A timeline of roles, growth, and impact across cloud and data engineering.</p>
 				</div>
 				<div class="career-graph">
-					<svg viewBox="0 0 920 260" role="img" aria-label="Career growth graph from system admin to senior manager in data engineering">
+					<svg viewBox="0 0 1220 520" role="img" aria-label="Career growth bar graph with roles and tenure details">
 						<g class="graph-grid">
-							<line x1="60" y1="40" x2="890" y2="40"></line>
-							<line x1="60" y1="95" x2="890" y2="95"></line>
-							<line x1="60" y1="150" x2="890" y2="150"></line>
-							<line x1="60" y1="205" x2="890" y2="205"></line>
+							<line x1="40" y1="80" x2="1180" y2="80"></line>
+							<line x1="40" y1="170" x2="1180" y2="170"></line>
+							<line x1="40" y1="260" x2="1180" y2="260"></line>
+							<line x1="40" y1="350" x2="1180" y2="350"></line>
+							<line x1="40" y1="440" x2="1180" y2="440"></line>
 						</g>
-						<polyline class="graph-trend" points="70,210 190,190 310,165 430,145 550,125 670,100 790,75"></polyline>
-						<circle class="graph-point" cx="70" cy="210" r="6"></circle>
-						<circle class="graph-point" cx="190" cy="190" r="6"></circle>
-						<circle class="graph-point" cx="310" cy="165" r="6"></circle>
-						<circle class="graph-point" cx="430" cy="145" r="6"></circle>
-						<circle class="graph-point" cx="550" cy="125" r="6"></circle>
-						<circle class="graph-point" cx="670" cy="100" r="6"></circle>
-						<circle class="graph-point" cx="790" cy="75" r="6"></circle>
-						<text class="graph-title" x="66" y="24">Career Growth Graph</text>
-						<text class="graph-label" x="38" y="212">L1</text>
-						<text class="graph-label" x="38" y="152">L2</text>
-						<text class="graph-label" x="38" y="97">L3</text>
-						<text class="graph-label" x="38" y="42">L4</text>
-						<text class="graph-label" x="50" y="236">IBM</text>
-						<text class="graph-label" x="156" y="236">Citrix</text>
-						<text class="graph-label" x="274" y="236">KPMG 1</text>
-						<text class="graph-label" x="394" y="236">KPMG 2</text>
-						<text class="graph-label" x="514" y="236">KPMG 3</text>
-						<text class="graph-label" x="624" y="236">MS Mgr</text>
-						<text class="graph-label" x="744" y="236">MS Sr Mgr</text>
+						<text class="graph-title" x="46" y="40">Career Experience Bar Graph</text>
+
+						<rect x="50" y="290" width="150" height="150" rx="10" fill="rgba(77,210,255,0.18)" stroke="rgba(127,201,255,0.45)"></rect>
+						<rect x="215" y="270" width="150" height="170" rx="10" fill="rgba(77,210,255,0.2)" stroke="rgba(127,201,255,0.45)"></rect>
+						<rect x="380" y="240" width="150" height="200" rx="10" fill="rgba(77,210,255,0.22)" stroke="rgba(127,201,255,0.45)"></rect>
+						<rect x="545" y="215" width="150" height="225" rx="10" fill="rgba(77,210,255,0.24)" stroke="rgba(127,201,255,0.45)"></rect>
+						<rect x="710" y="190" width="150" height="250" rx="10" fill="rgba(77,210,255,0.26)" stroke="rgba(127,201,255,0.45)"></rect>
+						<rect x="875" y="165" width="150" height="275" rx="10" fill="rgba(77,210,255,0.28)" stroke="rgba(127,201,255,0.45)"></rect>
+						<rect x="1040" y="140" width="150" height="300" rx="10" fill="rgba(127,255,212,0.22)" stroke="rgba(127,255,212,0.55)"></rect>
+
+						<text class="graph-label" x="58" y="312">07/17-06/18 • IBM</text>
+						<text class="graph-label" x="58" y="334">IT System Administraor</text>
+
+						<text class="graph-label" x="223" y="292">6/18-3/20 • CITRIX R&amp;D</text>
+						<text class="graph-label" x="223" y="314">L3 System Administraor</text>
+
+						<text class="graph-label" x="388" y="262">04/20-8/20 • KPMG</text>
+						<text class="graph-label" x="388" y="284">Azure CloudOps Consultant</text>
+						<text class="graph-label" x="388" y="306">Advisory Tech-Cloud Analytics</text>
+
+						<text class="graph-label" x="553" y="237">08/20-08/21 • KPMG</text>
+						<text class="graph-label" x="553" y="259">Azure CloudOps Consultant</text>
+						<text class="graph-label" x="553" y="281">Architecture &amp; Platfrom Engg</text>
+
+						<text class="graph-label" x="718" y="212">08/21-08/22 • KPMG</text>
+						<text class="graph-label" x="718" y="234">Senior CloudOps Consultant</text>
+						<text class="graph-label" x="718" y="256">Architecture &amp; Platfrom Engg</text>
+
+						<text class="graph-label" x="883" y="187">08/22-08/24 • Morgan Stanley</text>
+						<text class="graph-label" x="883" y="209">Manager Data Engineering</text>
+
+						<text class="graph-label" x="1048" y="162">01/24-Present • Morgan Stanley</text>
+						<text class="graph-label" x="1048" y="184">Senior Manager Data Engineering</text>
 					</svg>
-					<ul class="graph-details">
-						<li><strong>07/17-06/18 • IBM</strong>IT System Administraor</li>
-						<li><strong>6/18-3/20 • CITRIX R&amp;D</strong>L3 System Administraor</li>
-						<li><strong>04/20-8/20 • KPMG Global Services</strong>Azure CloudOps Consultant-Advisory Tech-Cloud Analytics</li>
-						<li><strong>08/20-08/21 • KPMG Global Services</strong>Azure CloudOps Consultant-Architecture &amp; Platfrom Engineering</li>
-						<li><strong>08/21-08/22 • KPMG Global Services</strong>Senior CloudOps Consultant-Architecture &amp; Platfrom Engineering</li>
-						<li><strong>08/22-08/24 • Morgan Stanley</strong>Manager Data Engineering</li>
-						<li><strong>01/24-Present • Morgan Stanley</strong>Senior Manager Data Engineering</li>
-					</ul>
 				</div>
 			</section>
 		</div>
