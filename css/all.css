@@ -217,7 +217,7 @@ h2.slogan{
 	margin: 0 auto;
 	padding: 93px 0 76px;
 	position:relative;
-	background: url(../images/icon_header.png) no-repeat 50% 0;
+	background: none;
 }
 #main h2{
 	display: block;
@@ -637,10 +637,6 @@ transition: all 0.5s ease-in-out;
 /* end add	 */
 
 @media (-webkit-min-device-pixel-ratio:2) ,(min--moz-device-pixel-ratio:2),(-o-min-device-pixel-ratio:2/1),(min-device-pixel-ratio:2),(min-resolution:192dpi),(min-resolution:2dppx){
-	#main {
-		background-image: url(../images/icon_header@x2.png);
-		background-size:114px 46px;
-	}
 	.menu_trigger{
 		background-image: url(../images/btn_mobile_menu@x2.png);
 		background-size:31px 30px;
